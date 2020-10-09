@@ -1,0 +1,2 @@
+export const RENDER_PLACES='RENDER_PLACES';
+export const CHECKED_FIELD='CHECKED_FIELD';

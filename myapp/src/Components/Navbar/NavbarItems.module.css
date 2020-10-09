@@ -1,0 +1,21 @@
+.Navbar{
+    list-style-type:none;
+    display:flex;
+    font-weight: bold; 
+    margin-left:300px;
+    padding:0;
+}
+
+.nav{
+    display: flex;
+}
+
+.btn{
+    height:50px;
+    padding:0 20px;
+    align-self: center;
+    background-color: transparent;
+    border:1px solid #ccc;
+}
+
+

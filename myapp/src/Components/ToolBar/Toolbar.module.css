@@ -1,0 +1,13 @@
+.Toolbar{
+    width:100%;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-around;
+}
+
+.Sitetag{
+    font-size:22px;
+    font-weight: bold;
+    color:#ff3b40;
+    padding-top:20px;
+}

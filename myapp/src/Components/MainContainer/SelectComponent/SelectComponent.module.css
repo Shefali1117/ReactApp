@@ -1,0 +1,9 @@
+.boxes {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}

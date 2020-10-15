@@ -5,17 +5,17 @@ import styles from "./ListComponent.module.css";
 import ListElements from './ListElements/ListElements';
 
 class List extends Component {
+
   componentDidMount() {
     this.props.fetchPlaces();
   }
   render() {
     let countrydata = null;
-    let heading=null;
     if (this.props.places.length !== 0) {
       let countries = this.props.places;
+      console.log(countries);
       countrydata=countries.map(country=>{return <div key={country.heading}><h2>{country.heading}</h2> 
-        <ListElements countries={country.value}/></div>})
-      
+        <ListElements countries={country.value} selected={this.props.selecteditems} heading={country.heading}/></div>})
     }
         
     return (

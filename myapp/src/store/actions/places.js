@@ -6,11 +6,6 @@ export const renderPlaces=()=>({
     places:places
 })
 
-export const checkedField=()=>({
-    type:actionTypes.CHECKED_FIELD,
-    places:places
-    
- })
 
 
  

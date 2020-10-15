@@ -15,16 +15,11 @@ return(updateObject(state,{
 ))
 }
 
-const checkedField=(state,action)=>{
-   return updateObject(state,{isChecked:true})
-    
-}
 
 
 const reducer=(state=initialState,action)=>{
     switch(action.type){
         case actionTypes.RENDER_PLACES:return renderPlaces(state,action);
-        case actionTypes.CHECKED_FIELD:return checkedField(state,action);
         default:return state;
     }
 }

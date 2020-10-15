@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import styles from '../ListComponent.module.css';
 import { connect } from "react-redux";
-import * as actions from "../../../../store/actions/index";
+
 
 class ListElements extends Component{
-
-    handleChange=(event,checked)=>{
-        if(!checked){
-            console.log(event.target);
-            return event.target.checked
-        }
+  
+  state = {
+      checkedItems: new Map(),
     }
 
+    handleChange = (e) =>{
+      const item = e.target.name;
+      const isChecked = e.target.checked;
+      this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+      this.props.selected({selected:this.state.checkedItems});
+    }
+  
+
     render(){
+      console.log(this.state.checkedItems);
         let country=null;
         if (this.props.countries.length !== 0) {
       let countries = this.props.countries;
@@ -22,9 +28,10 @@ class ListElements extends Component{
           <li>
            <input
               type="checkbox"
-              onClick={!country.isChecked}
-              checked={country.isChecked}
+              onClick={(e) => this.handleChange(e)}
+              defaultChecked={this.state.checkedItems.get(country.name)}
               value={country.name}
+              name={country.name}
             />{country.name}
           </li>
         </ul>
@@ -41,17 +48,11 @@ return (
 }
 
 const mapStateToProps=(state)=>{
-    console.log(state);
     return{
         places:state.place.isChecked
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-      checked: () => dispatch(actions.checkedField()),
-    };
-  };
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(ListElements);
+export default connect(mapStateToProps)(ListElements);

@@ -1,21 +1,32 @@
 .maincontainer{
     background: url("../../Images/bg.jpeg") center/cover;
     height:90vh;
-    position: relative;
+    display:flex;
+    justify-content: space-evenly;
+  
     
 }
 
-.container{
-    
+.containerList{
         background-color: white;
         padding-left:20px;
         width:30%;
-        position: absolute;
-        top:50%;
-        left:30%;
-        transform: translate(-50%,-50%);
+        height:65%;
         border-radius: 5px;
         overflow-y: scroll;
         overflow-x: hidden;
+        margin-top:100px;
     
 }
+
+ .containerSelected{
+        background-color: white;
+        padding-left:20px;
+        width:30%;
+        height:65%;
+        border-radius: 5px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-top:100px;
+}  
+
